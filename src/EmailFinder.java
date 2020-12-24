@@ -21,5 +21,37 @@ public class EmailFinder {
 				emailList.addMail(m.group());
 			}
 		}
+		scanner.close();
+		
+		Scanner inputScanner = new Scanner(System.in);
+		
+		boolean keepUsing = true;
+		while(keepUsing) {
+			System.out.println("Select an option (1) - Search for an email (2) - Print email list (0) - Exit");
+			int option = inputScanner.nextInt();
+			
+			switch(option) {
+				case 1:
+					System.out.println("\nEnter an email to search: ");
+					inputScanner.nextLine();
+					String emailID = inputScanner.nextLine();
+					
+					if (emailList.containsEmailID(emailID)) {
+						System.out.printf("%s is in the email list!\n", emailID);
+						continue;
+					}
+					System.out.printf("Don't have %s in the list\n", emailID);
+					break;
+				case 2:
+					emailList.printEmailList();
+					break;
+				case 0:
+					keepUsing = false;
+					break;
+			}
+			System.out.println();
+		}
+		
+		inputScanner.close();
 	}
 }

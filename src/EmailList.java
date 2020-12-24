@@ -12,7 +12,7 @@ public class EmailList {
 		this.emailList.add(emailID);
 	}
 	
-	public boolean searchEmailList(String emailID) {
+	public boolean containsEmailID(String emailID) {
 		return this.emailList.contains(emailID) ? true : false;
 	}
 	
