@@ -17,8 +17,10 @@ public class EmailList {
 	}
 	
 	public void printEmailList() {
+		int i = 1;
 		for (String emailID : this.emailList) {
-			System.out.println(emailID);
+			System.out.printf("%d: %s\n", i, emailID);
+			i++;
 		}
 	}
 }
